@@ -21,23 +21,23 @@ namespace CoinlibApi.Types
 		[JsonProperty("rank")]
 		public int Rank { get; set; }
 		[JsonProperty("price")]
-		public string Price { get; set; }
+		public double? Price { get; set; }
 		[JsonProperty("market_cap")]
-		public string MarketCap { get; set; }
+		public double? MarketCap { get; set; }
 		[JsonProperty("total_volume_24h")]
-		public string TotalVolume24h { get; set; }
+		public double? TotalVolume24h { get; set; }
 		[JsonProperty("low_24h")]
-		public string Low24h { get; set; }
+		public double? Low24h { get; set; }
 		[JsonProperty("high_24h")]
-		public string High24h { get; set; }
+		public double? High24h { get; set; }
 		[JsonProperty("delta_1h")]
-		public string Delta1h { get; set; }
+		public double? Delta1h { get; set; }
 		[JsonProperty("delta_24h")]
-		public string Delta24h { get; set; }
+		public double? Delta24h { get; set; }
 		[JsonProperty("delta_7d")]
-		public string Delta7d { get; set; }
+		public double? Delta7d { get; set; }
 		[JsonProperty("delta_30d")]
-		public string Delta30d { get; set; }
+		public double? Delta30d { get; set; }
 		[JsonProperty("markets")]
 		public List<CoinsResponseMarket> Markets { get; set; }
 		[JsonProperty("last_updated_timestamp")]
@@ -48,9 +48,9 @@ namespace CoinlibApi.Types
 		[JsonProperty("symbol")]
 		public string Symbol { get; set; }
 		[JsonProperty("volume_24h")]
-		public string Volume24h { get; set; }
+		public double? Volume24h { get; set; }
 		[JsonProperty("price")]
-		public string Price { get; set; }
+		public double? Price { get; set; }
 		[JsonProperty("exchanges")]
 		public List<CoinsResponseExchange> Exchanges { get; set; }
 	}
@@ -59,9 +59,9 @@ namespace CoinlibApi.Types
 		[JsonProperty("name")]
 		public string Name { get; set; }
 		[JsonProperty("volume_24h")]
-		public string Volume24h { get; set; }
+		public double? Volume24h { get; set; }
 		[JsonProperty("price")]
-		public string Price { get; set; }
+		public double? Price { get; set; }
 	}
 
 }

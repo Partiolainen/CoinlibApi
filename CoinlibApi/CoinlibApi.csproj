@@ -4,12 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Partiolainen</Authors>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.1.2</Version>
     <Company>Part</Company>
     <Description>Coinlib.io API library</Description>
     <Copyright>Part</Copyright>
     <PackageTags>Coinlib.io API Coinlib</PackageTags>
     <PackageReleaseNotes>Coinlib.io API</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/Partiolainen/CoinlibApi</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Partiolainen/CoinlibApi</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
