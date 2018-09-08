@@ -29,16 +29,16 @@ namespace CoinlibApi.Types
 		public int Rank { get; set; }
 
 		[JsonProperty("price")]
-		public string Price { get; set; }
+		public double? Price { get; set; }
 
 		[JsonProperty("market_cap")]
-		public string MarketCap { get; set; }
+		public double? MarketCap { get; set; }
 
 		[JsonProperty("volume_24h")]
-		public string Volume24h { get; set; }
+		public double? Volume24h { get; set; }
 
 		[JsonProperty("delta_24h")]
-		public string Delta24h { get; set; }
+		public double? Delta24h { get; set; }
 	}
 
 }
