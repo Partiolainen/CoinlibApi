@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace CoinlibApi.Types
+namespace CoinlibApi.Types.Response
 {
-    [Obsolete("Use Response.Coins")]
-    public class CoinsResponse
+	public class Coins
 	{
 		[JsonProperty("coins")]
-		public List<CoinsResponseCoin> Coins { get; set; }
+		public List<CoinsCoin> CoinsList { get; set; }
 
 		[JsonProperty("remaining")]
 		public int Remaining { get; set; }
 	}
-
-    [Obsolete("Use Response.CoinsCoin")]
-    public class CoinsResponseCoin
+	public class CoinsCoin
 	{
 		[JsonProperty("symbol")]
 		public string Symbol { get; set; }
@@ -57,14 +53,12 @@ namespace CoinlibApi.Types
 		public double? Delta30d { get; set; }
 
 		[JsonProperty("markets")]
-		public List<CoinsResponseMarket> Markets { get; set; }
+		public List<CoinsMarket> Markets { get; set; }
 
 		[JsonProperty("last_updated_timestamp")]
 		public int LastUpdatedTimestamp { get; set; }
 	}
-
-    [Obsolete("Use Response.CoinsMarket")]
-    public class CoinsResponseMarket
+	public class CoinsMarket
 	{
 		[JsonProperty("symbol")]
 		public string Symbol { get; set; }
@@ -76,11 +70,9 @@ namespace CoinlibApi.Types
 		public double? Price { get; set; }
 
 		[JsonProperty("exchanges")]
-		public List<CoinsResponseExchange> Exchanges { get; set; }
+		public List<CoinsExchange> Exchanges { get; set; }
 	}
-
-    [Obsolete]
-    public class CoinsResponseExchange
+	public class CoinsExchange
 	{
 		[JsonProperty("name")]
 		public string Name { get; set; }

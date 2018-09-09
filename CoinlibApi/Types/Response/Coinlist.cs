@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace CoinlibApi.Types
+namespace CoinlibApi.Types.Response
 {
-    [Obsolete("Use Response.Coinlist")]
-	public class CoinlistResponse
+	public class Coinlist
 	{
 		[JsonProperty("coins")]
-		public List<CoinlistResponseCoin> Coins { get; set; }
+		public List<CoinlistCoin> Coins { get; set; }
 
 		[JsonProperty("last_updated_timestamp")]
 		public int LastUpdatedTimestamp { get; set; }
@@ -16,9 +14,7 @@ namespace CoinlibApi.Types
 		[JsonProperty("remaining")]
 		public int Remaining { get; set; }
 	}
-
-    [Obsolete("Use Response.CoinlistCoin")]
-    public class CoinlistResponseCoin
+	public class CoinlistCoin
 	{
 		[JsonProperty("symbol")]
 		public string Symbol { get; set; }

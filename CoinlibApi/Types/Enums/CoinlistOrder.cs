@@ -1,8 +1,5 @@
-﻿using System;
-
-namespace CoinlibApi.Types
+﻿namespace CoinlibApi.Types.Enums
 {
-    [Obsolete("Use Enums.CoinlistOrder")]
 	public enum CoinlistOrder
 	{
 		rank_asc = 0,

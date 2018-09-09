@@ -1,10 +1,8 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace CoinlibApi.Types
+namespace CoinlibApi.Types.Response
 {
-    [Obsolete("Use Response.Global")]
-    public class GlobalResponse
+	public class Global
 	{
 		[JsonProperty("coins")]
 		public int Coins { get; set; }
