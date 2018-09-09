@@ -10,7 +10,7 @@ namespace CoinlibApi.Demo
     {
         private static async Task Main()
         {
-            var apikey = "e9b6fa0a81da88fd"; //Place your api key here
+            var apikey = ""; //Place your api key here
             var client = new Coinlib(apikey);
 
             var globalinfo = await client.Global("BTC");
