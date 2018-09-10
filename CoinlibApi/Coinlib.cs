@@ -81,30 +81,39 @@ namespace CoinlibApi
 		    return JsonConvert.DeserializeObject<CoinsCoin>(response);
 		}
 
-        /// <summary>
-        /// List of coins info
-        /// You can get info for up to 10 coins with a single call. Give a list of symbols
-        /// Using more coins calling api more times!!
-        /// </summary>
-        /// <param name="symbols">List of coins symbols</param>
-        /// <param name="pref">symbol to use for prices and other market values. Default is USD.</param>
-        /// <returns></returns>
+		/// <summary>
+		/// List of coins info
+		/// You can get info for up to 10 coins with a single call. Give a list of symbols
+		/// Using more coins calling api more times!!
+		/// </summary>
+		/// <param name="symbols">List of coins symbols</param>
+		/// <param name="pref">symbol to use for prices and other market values. Default is USD.</param>
+		/// <returns></returns>
 		public async Task<Coins> Coins(List<string> symbols, string pref = "USD")
 		{
-            var result = new Coins(){CoinsList=new List<CoinsCoin>()};
-		    for (int i = 0; i < symbols.Count; i+=10)
-		    {
-		        var list = symbols.GetRange(i, Math.Min(10, symbols.Count - i));
-		        using (var http = new HttpClient())
-		        {
-		            var response = await http.GetStringAsync($"{baseurl}/coin?key={apikey}&pref={pref}&symbol={string.Join(",", list)}");
-		            var coins = JsonConvert.DeserializeObject<Coins>(response);
-                    result.CoinsList.AddRange(coins.CoinsList);
-		            result.Remaining = coins.Remaining;
-		        }
-            }
-		    
-            return result;
+			var result = new Coins() {CoinsList = new List<CoinsCoin>()};
+			for (int i = 0; i < symbols.Count; i += 10)
+			{
+				if (symbols.Count - i > 1)
+				{
+					var list = symbols.GetRange(i, Math.Min(10, symbols.Count - i));
+					using (var http = new HttpClient())
+					{
+						var response =
+							await http.GetStringAsync($"{baseurl}/coin?key={apikey}&pref={pref}&symbol={string.Join(",", list)}");
+						var coins = JsonConvert.DeserializeObject<Coins>(response);
+						result.CoinsList.AddRange(coins.CoinsList);
+						result.Remaining = coins.Remaining;
+					}
+				}
+				else
+				{
+					var coin = await Coin(symbols[0], pref);
+					result.CoinsList.Add(coin);
+				}
+			}
+
+			return result;
 		}
 	}
 }

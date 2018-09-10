@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Partiolainen</Authors>
-    <Version>1.1.0.4</Version>
+    <Version>1.1.1.5</Version>
     <Company>Part</Company>
     <Description>Coinlib.io API library</Description>
     <Copyright>Part</Copyright>
